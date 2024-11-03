@@ -10,23 +10,23 @@
 
 ## セットアップ手順
 
-1. **Python環境の構築**: Python 3.7.1以上をインストールしてください。[Python公式サイト](https://www.python.org/downloads/)からダウンロードできます。
+1. **Python環境の構築**: Python 3.7.1以上をインストールしてください。[Python公式サイト](https://www.python.org/downloads/)からダウンロードできます。
 
-2. **OpenAI APIキーの取得**: [OpenAIの公式サイト](https://openai.com/)でアカウントを作成し、APIキーを取得してください。
+2. **OpenAI APIキーの取得**: [OpenAIの公式サイト](https://openai.com/)でアカウントを作成し、APIキーを取得してください。
 
 3. **必要なライブラリのインストール**: 以下のコマンドを実行して、必要なPythonライブラリをインストールします。
 
-   ```bash
+   ```bash
    pip install openai
-   ```
+   ```
 
-4. **APIキーの設定**: 環境変数 `OPENAI_API_KEY` に取得したAPIキーを設定します。以下のコマンドをターミナルで実行してください。
+4. **APIキーの設定**: 環境変数 `OPENAI_API_KEY` に取得したAPIキーを設定します。以下のコマンドをターミナルで実行してください。
 
-   ```bash
+   ```bash
    export OPENAI_API_KEY='your_api_key_here'
-   ```
+   ```
 
-   `your_api_key_here` を実際のAPIキーに置き換えてください。
+   `your_api_key_here` を実際のAPIキーに置き換えてください。
 
 ## 使い方
 
@@ -34,17 +34,17 @@
 
 2. **ステージング**: コミットしたい変更をステージングします。
 
-   ```bash
+   ```bash
    git add .
-   ```
+   ```
 
 3. **スクリプトの実行**: スクリプトを実行します。
 
-   ```bash
+   ```bash
    python generate_commit_message.py
-   ```
+   ```
 
-   スクリプトはステージングされた変更内容を解析し、OpenAIのAPIを使用して適切なコミットメッセージを生成し、自動的にコミットを行います。
+   スクリプトはステージングされた変更内容を解析し、OpenAIのAPIを使用して適切なコミットメッセージを生成し、自動的にコミットを行います。
 
 ## 注意事項
 
