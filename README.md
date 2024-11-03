@@ -1,0 +1,2 @@
+# autoCommitMsg
+OpenAI APIを使ってコミット時のメッセージを自動で作成する
