@@ -29,6 +29,14 @@ except subprocess.CalledProcessError:
     logging.error(f"指定されたフォルダ '{target_folder}' はGitリポジトリではありません。")
     exit(1)
 
+# リポジトリ内の登録済みファイルの変更をステージング
+try:
+    subprocess.run(['git', 'add', '-u'], cwd=target_folder, check=True)
+    logging.info("登録済みファイルの変更をステージングしました。")
+except subprocess.CalledProcessError as e:
+    logging.error(f"git add -u 実行中にエラーが発生しました: {e}")
+    exit(1)
+
 # git diff の出力を取得
 try:
     diff_result = subprocess.run(
@@ -69,11 +77,6 @@ try:
     commit_message = response.choices[0].message.content.strip()
 
     print(commit_message)
-
-    # コミットメッセージの長さを確認
-    # if len(commit_message) > 200:
-    #     logging.warning("生成されたコミットメッセージが長すぎます。手動で修正してください。")
-    #     exit(1)
 
     # コミットの実行
     subprocess.run(['git', 'commit', '-m', commit_message], cwd=target_folder, check=True)
