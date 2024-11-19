@@ -69,7 +69,7 @@ try:
             {"role": "system", "content": "あなたは優秀なソフトウェアエンジニアです。"},
             {"role": "user", "content": prompt}
         ],
-        max_tokens=100,
+        max_tokens=1000,
         temperature=0.5
     )
 
